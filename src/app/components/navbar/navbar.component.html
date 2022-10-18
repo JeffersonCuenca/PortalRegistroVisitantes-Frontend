@@ -5,20 +5,20 @@
     <span>Portal de registro de visitantes</span>
     <span class="example-spacer"></span>
 
-    <a *ngIf = "!login.isLoggedIn()" [routerLink]="'/login'" mat-button class="example-icon favorite-icon">
+    <a *ngIf = "!isLoggedIn" [routerLink]="'/login'" mat-button class="example-icon favorite-icon">
         Iniciar Sesión
     </a>
 
-    <a *ngIf = "!login.isLoggedIn()" [routerLink]="'/signup'" mat-button class="example-icon favorite-icon">
+    <a *ngIf = "!isLoggedIn" [routerLink]="'/signup'" mat-button class="example-icon favorite-icon">
         Registrarse
     </a>
 
-    <a *ngIf = "login.isLoggedIn()" (click) = "logout()" mat-button class="example-icon favorite-icon">
+    <button *ngIf = "isLoggedIn && user && login" mat-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    {{ user.nombre + ' ' + user.apellido + ' - ' + login.getUserRol() }}
+    </button>
+
+    <a *ngIf = "isLoggedIn" (click) = "logout()" mat-button class="example-icon favorite-icon">
         Cerrar Sesión
     </a>
-
-    <button *ngIf = "login.isLoggedIn()" mat-button style="margin-right: 10px" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    {{ login.getUser().username }}
-    </button>
 
 </mat-toolbar>
