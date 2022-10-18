@@ -34,6 +34,14 @@ export class SignupComponent implements OnInit {
       });
       return;
     }
+    if(this.user.username != this.user.dni){
+      this.snack.open('Por favor ingrese su DNI como nombre de usuario', 'Aceptar',{
+        duration : 3000,
+        verticalPosition : 'top',
+        horizontalPosition : 'right'
+      });
+      return;
+    }    
 
     this.userService.registrarUsuario(this.user).subscribe(
       (data) => {
