@@ -10,7 +10,7 @@ export class ProfileComponent implements OnInit {
 
   user:any = null;
 
-  constructor(private loginService:LoginService) { }
+  constructor(public loginService:LoginService) { }
 
   ngOnInit(): void {
     this.user = this.loginService.getUser();

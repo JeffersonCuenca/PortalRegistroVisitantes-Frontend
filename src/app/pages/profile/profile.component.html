@@ -15,10 +15,10 @@
                                 <td>Nombre de usuario</td>
                                 <td>{{ user.username }}</td>
                             </tr>
-                            <tr>
+                            <!--<tr>
                                 <td>ID</td>
                                 <td>{{ user.id }}</td>
-                            </tr>
+                            </tr>-->
                             <tr>
                                 <td>DNI</td>
                                 <td>{{ user.dni }}</td>
@@ -29,7 +29,8 @@
                             </tr>
                             <tr>
                                 <td>Rol</td>
-                                <td>{{ user.authorities[0].authority }}</td>
+                                <!--<td>{{ user.authorities[0].authority }}</td>-->
+                                <td>{{ loginService.getUserRol() }}</td>
                             </tr>
                             <tr>
                                 <td>Estado</td>
