@@ -9,6 +9,8 @@ import { NormalGuard } from './services/normal.guard';
 import { AdminGuard } from './services/admin.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewAreasComponent } from './pages/admin/view-areas/view-areas.component';
+import { AddAreasComponent } from './pages/admin/add-areas/add-areas.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,14 @@ const routes: Routes = [
       {
         path : '',
         component : WelcomeComponent
+      },
+      {
+        path : 'areas',
+        component : ViewAreasComponent
+      },
+      {
+        path : 'add-areas',
+        component : AddAreasComponent
       },
     ]
   },
