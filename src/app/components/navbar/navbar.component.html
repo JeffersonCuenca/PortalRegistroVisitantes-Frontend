@@ -1,7 +1,18 @@
 <mat-toolbar color="primary">
-    <a [routerLink]="'/'" mat-icon-button class="example-icon" aria-label="Example icon button with a menu icon">
+    <a *ngIf = "!isLoggedIn; else admin" [routerLink]="'/'" mat-icon-button class="example-icon" aria-label="Example icon button with a menu icon">
         <mat-icon>app_registration</mat-icon>
     </a>
+    <ng-template #admin>
+        <a *ngIf = "isLoggedIn && login.getUserRol() == 'ADMIN'; else usuario" [routerLink]="'/admin'" mat-icon-button class="example-icon" aria-label="Example icon button with a menu icon">
+            <mat-icon>app_registration</mat-icon>
+        </a>
+    </ng-template>
+    <ng-template #usuario>
+        <!--Tambien se puede poner  *ngIf = "isLoggedIn && login.getUserRol() == 'USUARIO'" pero no es necesario ya que arriba se tiene un else-->
+        <a [routerLink]="'/user-dashboard'" mat-icon-button class="example-icon" aria-label="Example icon button with a menu icon">
+            <mat-icon>app_registration</mat-icon>
+        </a>
+    </ng-template>
     <span>Portal de registro de visitantes</span>
     <span class="example-spacer"></span>
 
@@ -9,17 +20,19 @@
         Iniciar Sesión
     </a>
 
+    <!--Registrarse deja de aparecer cuando se logea un usuario-->
     <!--<a *ngIf = "!isLoggedIn" [routerLink]="'/signup'" mat-button class="example-icon favorite-icon">
         Registrarse
     </a>-->
 
     <button *ngIf = "isLoggedIn && user && login" mat-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     {{ user.nombre + ' ' + user.apellido + ' - ' + login.getUserRol() }}
+    <!--Otra forma de hacerlo-->
     <!--{{ user.nombre }} {{ user.apellido }} {{ login.getUserRol() }}-->
     </button>
 
-    <!--<a *ngIf = "isLoggedIn" (click) = "logout()" mat-button class="example-icon favorite-icon">
+    <a *ngIf = "isLoggedIn" (click) = "logout()" mat-button class="example-icon favorite-icon">
         Cerrar Sesión
-    </a>-->
+    </a>
 
 </mat-toolbar>

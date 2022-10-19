@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-list>
+        <div mat-subheader>
+            Lista de Areas
+        </div>
+        <mat-list-item *ngFor="let a of areas">
+            <mat-icon mat-list-icon>business</mat-icon>
+            <div mat-line>{{ a.nombreArea }}</div>
+            <button mat-flat-button color="warn" class="ml10" (click) = "eliminarArea(a.id)">Eliminar</button>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+
+    <div class="container text-center mt20">
+        <button routerLink="/admin/add-areas" mat-raised-button color="primary">Agregar Area</button>
+    </div>
+</mat-card>
