@@ -1,14 +1,14 @@
 <mat-card class="mt20">
-    <h1>Agregar nueva Area</h1>
+    <h1>Modificar Area</h1>
     <mat-card-content>
         <div class="bootstrap-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <form (ngSubmit)="formSubmit()">
+                    <form *ngIf = "area" (ngSubmit)="actualizarArea()">
 
                         <mat-form-field class="w100" appearance="outline">
                             <mat-label>Nombre del Area</mat-label>
-                            <input required autofocus type="text" name="titulo" matInput
+                            <input required type="text" name="nombre" matInput
                                 placeholder="Ingrese el nombre del Area" [(ngModel)]="area.nombreArea"
                                 (ngModelChange)="area.nombreArea = $event.toUpperCase()">
                         </mat-form-field>

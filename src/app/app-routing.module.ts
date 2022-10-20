@@ -11,6 +11,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewAreasComponent } from './pages/admin/view-areas/view-areas.component';
 import { AddAreasComponent } from './pages/admin/add-areas/add-areas.component';
+import { UpdateAreasComponent } from './pages/admin/update-areas/update-areas.component';
+import { ViewVisitantesComponent } from './pages/admin/view-visitantes/view-visitantes.component';
+import { AddVisitantesComponent } from './pages/admin/add-visitantes/add-visitantes.component';
 
 const routes: Routes = [
   {
@@ -47,6 +50,18 @@ const routes: Routes = [
       {
         path : 'add-areas',
         component : AddAreasComponent
+      },
+      {
+        path : 'update-areas/:id',
+        component : UpdateAreasComponent
+      },
+      {
+        path : 'visitantes',
+        component : ViewVisitantesComponent
+      },
+      {
+        path : 'add-visitantes',
+        component : AddVisitantesComponent
       },
     ]
   },
