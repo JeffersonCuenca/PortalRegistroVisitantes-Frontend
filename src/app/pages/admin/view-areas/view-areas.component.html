@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="mt20">
     <mat-list>
         <div mat-subheader>
             Lista de Areas
@@ -6,6 +6,7 @@
         <mat-list-item *ngFor="let a of areas">
             <mat-icon mat-list-icon>business</mat-icon>
             <div mat-line>{{ a.nombreArea }}</div>
+            <button [routerLink] = "'/admin/update-areas/'+a.id" mat-flat-button color="primary" class="ml20">Modificar</button>
             <button mat-flat-button color="warn" class="ml10" (click) = "eliminarArea(a.id)">Eliminar</button>
             <mat-divider></mat-divider>
         </mat-list-item>

@@ -1,0 +1,33 @@
+<mat-card class="mt20">
+    <mat-table *ngFor="let v of visitantes">
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{v.nombreVisitante}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{v.apellidoVisitante}} </mat-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{v.dniVisitante}} </mat-cell>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{v.fechaHoraIngreso}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{v.fechaHoraSalida}} </mat-cell>
+        </ng-container>
+
+    </mat-table>
+</mat-card>

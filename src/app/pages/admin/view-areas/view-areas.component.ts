@@ -16,7 +16,7 @@ export class ViewAreasComponent implements OnInit {
   constructor(private areaService: AreaService) { }
 
   ngOnInit(): void {
-    this.areaService.listarArea().subscribe(
+    this.areaService.listarAreas().subscribe(
       (dato: any) => {
         this.areas = dato;
         console.log(this.areas);
@@ -42,7 +42,7 @@ export class ViewAreasComponent implements OnInit {
       if (result.isConfirmed) {
         this.areaService.eliminarArea(id).subscribe(
           (data) => {
-            this.areas = this.areas.filter((examen: any) => examen.examenId != id);
+            this.areas = this.areas.filter((area: any) => area.id != id);
             Swal.fire('Area eliminada', 'El Area ha sido eliminada de la base de datos', 'success');
             window.location.reload();
           },
