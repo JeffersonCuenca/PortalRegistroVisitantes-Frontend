@@ -44,7 +44,6 @@ export class ViewAreasComponent implements OnInit {
           (data) => {
             this.areas = this.areas.filter((area: any) => area.id != id);
             Swal.fire('Area eliminada', 'El Area ha sido eliminada de la base de datos', 'success');
-            window.location.reload();
           },
           (error) => {
             Swal.fire('Error', 'Error al eliminar el Area', 'error');
