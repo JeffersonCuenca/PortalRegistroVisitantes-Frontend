@@ -25,8 +25,12 @@ export class VisitanteService {
     return this.http.get(`${baserUrl}/visitantes/list/${id}`);
   }
 
-  public actualizarVisitante(area:any){
-    return this.http.put(`${baserUrl}/visitantes/update`,area);
+  public actualizarVisitante(visitante:any){
+    return this.http.put(`${baserUrl}/visitantes/update`,visitante);
+  }
+
+  public actualizarVisitanteSalida(visitante:any){
+    return this.http.put(`${baserUrl}/visitantes/updateSalida`,visitante);
   }
 
 }

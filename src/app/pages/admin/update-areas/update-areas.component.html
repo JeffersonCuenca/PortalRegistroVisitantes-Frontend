@@ -1,24 +1,25 @@
 <mat-card class="mt20">
-    <h1>Modificar Area</h1>
-    <mat-card-content>
-        <div class="bootstrap-wrapper">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <form *ngIf = "area" (ngSubmit)="actualizarArea()">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row mt20">
+                <div class="col-md-6 offset-md-3">
+                    <h1>Modificar Area</h1>
+                    <mat-card-content>
+                        <form *ngIf="area" (ngSubmit)="actualizarArea()">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Nombre del Area</mat-label>
+                                <input required type="text" name="nombre" matInput
+                                    placeholder="Ingrese el nombre del Area" [(ngModel)]="area.nombreArea"
+                                    (ngModelChange)="area.nombreArea = $event.toUpperCase()">
+                            </mat-form-field>
 
-                        <mat-form-field class="w100" appearance="outline">
-                            <mat-label>Nombre del Area</mat-label>
-                            <input required type="text" name="nombre" matInput
-                                placeholder="Ingrese el nombre del Area" [(ngModel)]="area.nombreArea"
-                                (ngModelChange)="area.nombreArea = $event.toUpperCase()">
-                        </mat-form-field>
-
-                        <div class="container text-center mt20">
-                            <button mat-raised-button color="primary">Guardar</button>
-                        </div>
-                    </form>
+                            <div class="container text-center mt20">
+                                <button mat-raised-button color="primary">Guardar</button>
+                            </div>
+                        </form>
+                    </mat-card-content>
                 </div>
             </div>
         </div>
-    </mat-card-content>
+    </div>
 </mat-card>

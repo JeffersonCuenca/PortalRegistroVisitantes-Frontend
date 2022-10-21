@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AreaService } from 'src/app/services/area.service';
 import { VisitanteService } from 'src/app/services/visitante.service';
 import Swal from 'sweetalert2';
@@ -9,15 +10,14 @@ import Swal from 'sweetalert2';
   styleUrls: ['./view-visitantes.component.css']
 })
 export class ViewVisitantesComponent implements OnInit {
-  displayedColumns: string[] = ['nombre', 'apellido', 'dni', 'area', 'fechaHoraIngreso', 'modificar', 'eliminar'];
+  displayedColumns: string[] = ['nombre', 'apellido', 'dni', 'area', 'fechaHoraIngreso', 'modificar', 'eliminar', 'registrarsalida'];
   displayedColumnsfechaHoraSalida: string[] = ['nombre', 'apellido', 'dni', 'area', 'fechaHoraIngreso', 'fechaHoraSalida', 'modificar', 'eliminar'];
   
   visitantes: any = [
     
   ]
 
-  constructor(private visitanteService: VisitanteService) {
-  }
+  constructor(private visitanteService: VisitanteService) {}
 
   ngOnInit(): void {
     this.visitanteService.listarVisitantes().subscribe(
