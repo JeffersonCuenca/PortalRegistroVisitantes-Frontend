@@ -35,6 +35,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSortModule } from '@angular/material/sort';
 import { UpdateVisitantesComponent } from './pages/admin/update-visitantes/update-visitantes.component';
+import { UpdateVisitantesSalidaComponent } from './pages/admin/update-visitantes-salida/update-visitantes-salida.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { UpdateVisitantesComponent } from './pages/admin/update-visitantes/updat
     UpdateAreasComponent,
     ViewVisitantesComponent,
     AddVisitantesComponent,
-    UpdateVisitantesComponent
+    UpdateVisitantesComponent,
+    UpdateVisitantesSalidaComponent
   ],
   imports: [
     BrowserModule,
