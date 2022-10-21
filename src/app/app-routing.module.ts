@@ -14,6 +14,7 @@ import { AddAreasComponent } from './pages/admin/add-areas/add-areas.component';
 import { UpdateAreasComponent } from './pages/admin/update-areas/update-areas.component';
 import { ViewVisitantesComponent } from './pages/admin/view-visitantes/view-visitantes.component';
 import { AddVisitantesComponent } from './pages/admin/add-visitantes/add-visitantes.component';
+import { UpdateVisitantesComponent } from './pages/admin/update-visitantes/update-visitantes.component';
 
 const routes: Routes = [
   {
@@ -62,6 +63,10 @@ const routes: Routes = [
       {
         path : 'add-visitantes',
         component : AddVisitantesComponent
+      },
+      {
+        path : 'update-visitantes/:id',
+        component : UpdateVisitantesComponent
       },
     ]
   },

@@ -9,13 +9,15 @@ import Swal from 'sweetalert2';
   styleUrls: ['./view-visitantes.component.css']
 })
 export class ViewVisitantesComponent implements OnInit {
-  displayedColumns: string[] = ['nombre', 'apellido', 'dni', 'area', 'fechaHoraIngreso', 'fechaHoraSalida'];
-
+  displayedColumns: string[] = ['nombre', 'apellido', 'dni', 'area', 'fechaHoraIngreso', 'modificar', 'eliminar'];
+  displayedColumnsfechaHoraSalida: string[] = ['nombre', 'apellido', 'dni', 'area', 'fechaHoraIngreso', 'fechaHoraSalida', 'modificar', 'eliminar'];
+  
   visitantes: any = [
-
+    
   ]
 
-  constructor(private visitanteService: VisitanteService) { }
+  constructor(private visitanteService: VisitanteService) {
+  }
 
   ngOnInit(): void {
     this.visitanteService.listarVisitantes().subscribe(
@@ -46,7 +48,6 @@ export class ViewVisitantesComponent implements OnInit {
           (data) => {
             this.visitantes = this.visitantes.filter((visitante: any) => visitante.id != id);
             Swal.fire('Visitante eliminado', 'El Visitante ha sido eliminada de la base de datos', 'success');
-            window.location.reload();
           },
           (error) => {
             Swal.fire('Error', 'Error al eliminar el Visitante', 'error');

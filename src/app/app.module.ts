@@ -33,6 +33,8 @@ import { ViewVisitantesComponent } from './pages/admin/view-visitantes/view-visi
 import { AddVisitantesComponent } from './pages/admin/add-visitantes/add-visitantes.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSortModule } from '@angular/material/sort';
+import { UpdateVisitantesComponent } from './pages/admin/update-visitantes/update-visitantes.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     AddAreasComponent,
     UpdateAreasComponent,
     ViewVisitantesComponent,
-    AddVisitantesComponent
+    AddVisitantesComponent,
+    UpdateVisitantesComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatIconModule,
     MatListModule,
     MatTableModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatSortModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

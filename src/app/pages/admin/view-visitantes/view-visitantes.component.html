@@ -1,46 +1,129 @@
 <mat-card class="mt20">
     <div mat-subheader>
-        Lista de Visitantes
+        Lista de Visitantes Ingresantes
     </div>
-    <table mat-table [dataSource]="visitantes" class="mat-elevation-z2">
+    <table mat-table [dataSource]="visitantes" class="mat-elevation-z2" matSort>
 
         <!-- Nombres Column -->
         <ng-container matColumnDef="nombre">
-            <th mat-header-cell *matHeaderCellDef> Nombres </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombres </th>
             <td mat-cell *matCellDef="let visitantes"> {{visitantes.nombreVisitante}} </td>
         </ng-container>
 
         <!-- Apellidos Column -->
         <ng-container matColumnDef="apellido">
-            <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </th>
             <td mat-cell *matCellDef="let visitantes"> {{visitantes.apellidoVisitante}} </td>
         </ng-container>
 
         <!-- DNI Column -->
         <ng-container matColumnDef="dni">
-            <th mat-header-cell *matHeaderCellDef> DNI </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> DNI </th>
             <td mat-cell *matCellDef="let visitantes"> {{visitantes.dniVisitante}} </td>
         </ng-container>
 
         <!-- Area Column -->
         <ng-container matColumnDef="area">
-            <th mat-header-cell *matHeaderCellDef> Area </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Area </th>
             <td mat-cell *matCellDef="let visitantes"> {{visitantes.area.nombreArea}} </td>
         </ng-container>
 
         <!-- Fecha y Hora de Ingreso Column -->
         <ng-container matColumnDef="fechaHoraIngreso">
-            <th mat-header-cell *matHeaderCellDef> Fecha y Hora de Ingreso </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha y Hora de Ingreso </th>
+            <td mat-cell *matCellDef="let visitantes"> {{visitantes.fechaHoraIngreso | date : 'medium'}} </td>
+        </ng-container>
+
+        <!-- Modificar Column -->
+        <ng-container matColumnDef="modificar">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Modificar </th>
+            <td mat-cell *matCellDef="let visitantes">
+                <a [routerLink] = "'/admin/update-visitantes/'+visitantes.id" color="primary" mat-icon-button>
+                    <mat-icon>edit</mat-icon>
+                </a>
+            </td>            
+        </ng-container>
+
+        <!-- Eliminar Column -->
+        <ng-container matColumnDef="eliminar">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Eliminar </th>
+            <td mat-cell *matCellDef="let visitantes">
+                <a color="warn" class="ml10" (click) = "eliminarVisitante(visitantes.id)" mat-icon-button>
+                    <mat-icon>delete</mat-icon>
+                </a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let visitantes; columns: displayedColumns;" [class.hidden]="visitantes.fechaHoraSalida != null"></tr>
+    </table>
+    <br><br>
+    <div mat-subheader>
+        Lista de Visitantes Salientes
+    </div>
+    <table mat-table [dataSource]="visitantes" class="mat-elevation-z2" matSort>
+
+        <!-- Nombres Column -->
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombres </th>
+            <td mat-cell *matCellDef="let visitantes"> {{visitantes.nombreVisitante}} </td>
+        </ng-container>
+
+        <!-- Apellidos Column -->
+        <ng-container matColumnDef="apellido">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </th>
+            <td mat-cell *matCellDef="let visitantes"> {{visitantes.apellidoVisitante}} </td>
+        </ng-container>
+
+        <!-- DNI Column -->
+        <ng-container matColumnDef="dni">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> DNI </th>
+            <td mat-cell *matCellDef="let visitantes"> {{visitantes.dniVisitante}} </td>
+        </ng-container>
+
+        <!-- Area Column -->
+        <ng-container matColumnDef="area">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Area </th>
+            <td mat-cell *matCellDef="let visitantes"> {{visitantes.area.nombreArea}} </td>
+        </ng-container>
+
+        <!-- Fecha y Hora de Ingreso Column -->
+        <ng-container matColumnDef="fechaHoraIngreso">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha y Hora de Ingreso </th>
             <td mat-cell *matCellDef="let visitantes"> {{visitantes.fechaHoraIngreso | date : 'medium'}} </td>
         </ng-container>
 
         <!-- Fecha y Hora de Salida Column -->
         <ng-container matColumnDef="fechaHoraSalida">
-            <th mat-header-cell *matHeaderCellDef> Fecha y Hora de Salida </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha y Hora de Salida </th>
             <td mat-cell *matCellDef="let visitantes"> {{visitantes.fechaHoraSalida | date : 'medium'}} </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <!-- Modificar Column -->
+        <ng-container matColumnDef="modificar">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Modificar </th>
+            <td mat-cell *matCellDef="let visitantes">
+                <a [routerLink] = "'/admin/update-visitantes/'+visitantes.id" color="primary" mat-icon-button>
+                    <mat-icon>edit</mat-icon>
+                </a>
+            </td>            
+        </ng-container>
+
+        <!-- Eliminar Column -->
+        <ng-container matColumnDef="eliminar">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Eliminar </th>
+            <td mat-cell *matCellDef="let visitantes">
+                <a color="warn" class="ml10" (click) = "eliminarVisitante(visitantes.id)" mat-icon-button>
+                    <mat-icon>delete</mat-icon>
+                </a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsfechaHoraSalida"></tr>
+        <tr mat-row *matRowDef="let visitantes; columns: displayedColumnsfechaHoraSalida;" [class.hidden]="visitantes.fechaHoraSalida == null"></tr>
     </table>
+    <br><br>
+    <div class="container text-center mt20">
+        <button routerLink="/admin/add-visitantes" mat-raised-button color="primary">Agregar Visitante</button>
+    </div>
 </mat-card>
