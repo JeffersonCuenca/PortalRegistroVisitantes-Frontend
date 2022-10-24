@@ -44,7 +44,7 @@ const routes: Routes = [
         component : AddUsuariosComponent
       },
       {
-        path : 'update-usuarios/:id',
+        path : 'update-usuarios/:username',
         component : UpdateUsuariosComponent
       },
       {
