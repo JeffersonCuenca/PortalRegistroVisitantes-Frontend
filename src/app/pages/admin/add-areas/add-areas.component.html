@@ -4,20 +4,25 @@
             <div class="row mt20">
                 <div class="col-md-6 offset-md-3">
                     <h1>Agregar nueva Area</h1>
-                    <mat-card-content>
-                        <form (ngSubmit)="formSubmit()">
-                            <mat-form-field class="w100" appearance="outline">
-                                <mat-label>Nombre del Area</mat-label>
-                                <input required autofocus type="text" name="titulo" matInput
+                    <form (ngSubmit)="formSubmit()">
+
+                        <mat-form-field class="w100" appearance="fill">
+                            <mat-label>Nombre del Area</mat-label>
+                                <input required autofocus type="text" name="nombre" matInput
                                     placeholder="Ingrese el nombre del Area" [(ngModel)]="area.nombreArea"
                                     (ngModelChange)="area.nombreArea = $event.toUpperCase()">
-                            </mat-form-field>
+                        </mat-form-field>
 
-                            <div class="container text-center mt20">
-                                <button mat-raised-button color="primary">Guardar</button>
-                            </div>
-                        </form>
-                    </mat-card-content>
+                        <mat-form-field class="w100" appearance="fill">
+                            <mat-label>Descripción</mat-label>
+                                <textarea required autofocus type="text" name="descripcion" matInput
+                                    placeholder="Ingrese una breve descripcion del Area" [(ngModel)]="area.descripcionArea" rows="8"></textarea>
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary">Guardar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

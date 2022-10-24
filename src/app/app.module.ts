@@ -16,7 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SignupComponent } from './pages/admin/signup/signup.component';
+import { AddUsuariosComponent } from './pages/admin/add-usuarios/add-usuarios.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { authInterceptorProviders } from './services/auth.interceptor';
@@ -36,12 +36,14 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSortModule } from '@angular/material/sort';
 import { UpdateVisitantesComponent } from './pages/admin/update-visitantes/update-visitantes.component';
 import { UpdateVisitantesSalidaComponent } from './pages/admin/update-visitantes-salida/update-visitantes-salida.component';
+import { ViewUsuariosComponent } from './pages/admin/view-usuarios/view-usuarios.component';
+import { UpdateUsuariosComponent } from './pages/admin/update-usuarios/update-usuarios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SignupComponent,
+    AddUsuariosComponent,
     LoginComponent,
     HomeComponent,
     DashboardComponent,
@@ -55,7 +57,9 @@ import { UpdateVisitantesSalidaComponent } from './pages/admin/update-visitantes
     ViewVisitantesComponent,
     AddVisitantesComponent,
     UpdateVisitantesComponent,
-    UpdateVisitantesSalidaComponent
+    UpdateVisitantesSalidaComponent,
+    ViewUsuariosComponent,
+    UpdateUsuariosComponent
   ],
   imports: [
     BrowserModule,

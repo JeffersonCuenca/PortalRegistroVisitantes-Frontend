@@ -1,8 +1,10 @@
+import { ViewUsuariosComponent } from './pages/admin/view-usuarios/view-usuarios.component';
+import { UpdateUsuariosComponent } from './pages/admin/update-usuarios/update-usuarios.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
-import { SignupComponent } from './pages/admin/signup/signup.component';
+import { AddUsuariosComponent } from './pages/admin/add-usuarios/add-usuarios.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NormalGuard } from './services/normal.guard';
@@ -39,7 +41,15 @@ const routes: Routes = [
       },
       {
         path : 'adduser',
-        component : SignupComponent
+        component : AddUsuariosComponent
+      },
+      {
+        path : 'update-usuarios/:id',
+        component : UpdateUsuariosComponent
+      },
+      {
+        path : 'usuarios',
+        component : ViewUsuariosComponent
       },
       {
         path : '',

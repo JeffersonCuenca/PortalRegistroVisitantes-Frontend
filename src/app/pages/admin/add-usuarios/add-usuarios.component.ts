@@ -4,11 +4,11 @@ import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-add-usuarios',
+  templateUrl: './add-usuarios.component.html',
+  styleUrls: ['./add-usuarios.component.css']
 })
-export class SignupComponent implements OnInit {
+export class AddUsuariosComponent implements OnInit {
 
   public user = {
     username : '',
