@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./view-areas.component.css']
 })
 export class ViewAreasComponent implements OnInit {
+  displayedColumns: string[] = ['nombre', 'descripcion', 'modificar', 'eliminar'];
 
   areas: any = [
 

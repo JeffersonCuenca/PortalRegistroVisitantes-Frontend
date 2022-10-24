@@ -12,7 +12,8 @@ import Swal from 'sweetalert2';
 export class AddAreasComponent implements OnInit {
 
   area = {
-    nombreArea : ''
+    nombreArea : '',
+    descripcionArea : ''
   }
 
   constructor(private areaService:AreaService,private snack:MatSnackBar,private router:Router) { }
