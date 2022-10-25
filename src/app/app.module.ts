@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +38,9 @@ import { UpdateVisitantesComponent } from './pages/admin/update-visitantes/updat
 import { UpdateVisitantesSalidaComponent } from './pages/admin/update-visitantes-salida/update-visitantes-salida.component';
 import { ViewUsuariosComponent } from './pages/admin/view-usuarios/view-usuarios.component';
 import { UpdateUsuariosComponent } from './pages/admin/update-usuarios/update-usuarios.component';
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeEs, 'es');
 
 @NgModule({
   declarations: [
@@ -80,7 +83,7 @@ import { UpdateUsuariosComponent } from './pages/admin/update-usuarios/update-us
     MatDatepickerModule,
     MatSortModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, {provide:LOCALE_ID, useValue: 'es'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

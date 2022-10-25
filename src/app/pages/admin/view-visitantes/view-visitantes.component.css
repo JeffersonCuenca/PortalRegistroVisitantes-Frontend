@@ -5,3 +5,15 @@ table {
 .hidden {
   display: none;
 }
+
+.text-right {
+  text-align: right;
+  margin-right: 30px;
+  padding-right: 30px;
+}
+
+.text-left {
+  text-align: left;
+  margin-left:0px;
+  padding-left: 0px;
+}

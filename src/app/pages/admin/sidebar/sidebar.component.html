@@ -1,32 +1,39 @@
 <mat-card class="mt20">
     <mat-action-list>
       <div mat-subheader>Menu</div>
+
       <button routerLink = "/admin" mat-list-item>
         <mat-icon mat-list-icon>home</mat-icon> Inicio
       </button>
+
       <button mat-list-item routerLink = "/admin/profile">
         <mat-icon mat-list-icon>account_circle</mat-icon>Perfil
       </button>
+
       <button mat-list-item routerLink = "/admin/adduser">
         <mat-icon mat-list-icon>person_add</mat-icon>Agregar Usuario
       </button>
       <button mat-list-item routerLink = "/admin/usuarios">
         <mat-icon mat-list-icon>person</mat-icon>Lista de Usuarios
       </button>
+
+      <button mat-list-item routerLink = "/admin/add-areas">
+        <mat-icon mat-list-icon>add_box</mat-icon>Agregar Area
+      </button>
       <button mat-list-item routerLink = "/admin/areas">
         <mat-icon mat-list-icon>apartment</mat-icon>Lista de Areas
       </button>
-      <button mat-list-item routerLink = "/admin/add-areas">
-        <mat-icon mat-list-icon>add_box</mat-icon>Agregar Area
+
+      <button mat-list-item routerLink = "/admin/add-visitantes">
+        <mat-icon mat-list-icon>group_add</mat-icon>Registrar Visitante
       </button>
       <button mat-list-item routerLink = "/admin/visitantes">
         <mat-icon mat-list-icon>groups</mat-icon>Lista de Visitantes
       </button>
-      <button mat-list-item routerLink = "/admin/add-visitantes">
-        <mat-icon mat-list-icon>group_add</mat-icon>Registrar Visitante
-      </button>
+      
       <button mat-list-item (click) = "logout()">
         <mat-icon mat-list-icon>logout</mat-icon>Salir
       </button>
+      
     </mat-action-list>
   </mat-card>
