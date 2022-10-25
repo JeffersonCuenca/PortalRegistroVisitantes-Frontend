@@ -19,8 +19,10 @@ export class AddVisitantesComponent implements OnInit {
     nombreVisitante: '',
     apellidoVisitante: '',
     dniVisitante: '',
-    fechaHoraIngreso: '',
-    fechaHoraSalida: '',
+    fechaIngreso: '',
+    fechaSalida: '',
+    horaIngreso: '',
+    horaSalida: '',
     area: {
       id: ''
     }
@@ -56,8 +58,10 @@ export class AddVisitantesComponent implements OnInit {
           nombreVisitante: '',
           apellidoVisitante: '',
           dniVisitante: '',
-          fechaHoraIngreso: '',
-          fechaHoraSalida: '',
+          fechaIngreso: '',
+          fechaSalida: '',
+          horaIngreso: '',
+          horaSalida: '',
           area: {
             id: ''
           }
