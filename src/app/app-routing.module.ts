@@ -1,3 +1,4 @@
+import { ViewVisitantesFechasComponent } from './pages/admin/view-visitantes-fechas/view-visitantes-fechas.component';
 import { ViewUsuariosComponent } from './pages/admin/view-usuarios/view-usuarios.component';
 import { UpdateUsuariosComponent } from './pages/admin/update-usuarios/update-usuarios.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
@@ -70,6 +71,10 @@ const routes: Routes = [
       {
         path : 'visitantes',
         component : ViewVisitantesComponent
+      },
+      {
+        path : 'visitantes-porfechas',
+        component : ViewVisitantesFechasComponent
       },
       {
         path : 'add-visitantes',

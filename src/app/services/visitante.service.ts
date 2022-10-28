@@ -33,4 +33,8 @@ export class VisitanteService {
     return this.http.put(`${baserUrl}/visitantes/updateSalida`,visitante);
   }
 
+  public reporteJasperVisitantes(){
+    return this.http.get(`${baserUrl}/reporteJasperVisitantes`);
+  }
+
 }

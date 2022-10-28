@@ -40,6 +40,8 @@ import { ViewUsuariosComponent } from './pages/admin/view-usuarios/view-usuarios
 import { UpdateUsuariosComponent } from './pages/admin/update-usuarios/update-usuarios.component';
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
+import { ViewVisitantesFechasComponent } from './pages/admin/view-visitantes-fechas/view-visitantes-fechas.component';
+import { MatNativeDateModule } from '@angular/material/core';
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
@@ -62,7 +64,8 @@ registerLocaleData(localeEs, 'es');
     UpdateVisitantesComponent,
     UpdateVisitantesSalidaComponent,
     ViewUsuariosComponent,
-    UpdateUsuariosComponent
+    UpdateUsuariosComponent,
+    ViewVisitantesFechasComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +84,8 @@ registerLocaleData(localeEs, 'es');
     MatListModule,
     MatTableModule,
     MatDatepickerModule,
-    MatSortModule
+    MatSortModule,
+    MatNativeDateModule
   ],
   providers: [authInterceptorProviders, {provide:LOCALE_ID, useValue: 'es'}],
   bootstrap: [AppComponent]
