@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
           } else if(this.loginService.getUserRol() == "USUARIO") {
             //Mostrar el dashboard de usuario
             //window.location.href = '/user-dashboard';
-            this.router.navigate(['user-dashboard']);
+            this.router.navigate(['user']);
             this.loginService.loginStatusSubjec.next(true);
           } else {
             this.loginService.logout();

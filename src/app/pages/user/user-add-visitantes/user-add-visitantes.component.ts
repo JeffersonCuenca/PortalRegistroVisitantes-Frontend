@@ -1,17 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { AreaService } from 'src/app/services/area.service';
-import { VisitanteService } from 'src/app/services/visitante.service';
-import {FormControl} from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AreaService } from './../../../services/area.service';
+import { VisitanteService } from './../../../services/visitante.service';
 import Swal from 'sweetalert2';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-add-visitantes',
-  templateUrl: './add-visitantes.component.html',
-  styleUrls: ['./add-visitantes.component.css']
+  selector: 'app-user-add-visitantes',
+  templateUrl: './user-add-visitantes.component.html',
+  styleUrls: ['./user-add-visitantes.component.css']
 })
-export class AddVisitantesComponent implements OnInit {
+export class UserAddVisitantesComponent implements OnInit {
 
   areas: any = [];
 
@@ -54,23 +53,12 @@ export class AddVisitantesComponent implements OnInit {
       (data) => {
         console.log(data);
         Swal.fire('Visitante guardado', 'El Visitante ha sido guardado con éxito', 'success');
-        /*this.visitante = {
-          nombreVisitante: '',
-          apellidoVisitante: '',
-          dniVisitante: '',
-          fechaIngreso: '',
-          fechaSalida: '',
-          horaIngreso: '',
-          horaSalida: '',
-          area: {
-            id: ''
-          }
-        }*/
-        this.router.navigate(['/admin/visitantes']);
+        this.router.navigate(['/user/visitantes']);
       },
       (error) => {
         Swal.fire('Error', 'Error al guardar el Visitante', 'error');
       }
     )
   }
+
 }

@@ -1,3 +1,9 @@
+import { UserUpdateVisitantesSalidaComponent } from './pages/user/user-update-visitantes-salida/user-update-visitantes-salida.component';
+import { UserUpdateVisitantesComponent } from './pages/user/user-update-visitantes/user-update-visitantes.component';
+import { UserAddVisitantesComponent } from './pages/user/user-add-visitantes/user-add-visitantes.component';
+import { UserViewVisitantesComponent } from './pages/user/user-view-visitantes/user-view-visitantes.component';
+import { UserViewAreasComponent } from './pages/user/user-view-areas/user-view-areas.component';
+import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
 import { ViewVisitantesFechasComponent } from './pages/admin/view-visitantes-fechas/view-visitantes-fechas.component';
 import { ViewUsuariosComponent } from './pages/admin/view-usuarios/view-usuarios.component';
 import { UpdateUsuariosComponent } from './pages/admin/update-usuarios/update-usuarios.component';
@@ -23,7 +29,7 @@ import { UpdateVisitantesSalidaComponent } from './pages/admin/update-visitantes
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: LoginComponent,
     pathMatch: 'full'
   },
   {
@@ -36,6 +42,10 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AdminGuard],
     children:[
+      {
+        path : '',
+        component : WelcomeComponent
+      },
       {
         path:'profile',
         component: ProfileComponent
@@ -51,10 +61,6 @@ const routes: Routes = [
       {
         path : 'usuarios',
         component : ViewUsuariosComponent
-      },
-      {
-        path : '',
-        component : WelcomeComponent
       },
       {
         path : 'areas',
@@ -88,13 +94,50 @@ const routes: Routes = [
         path : 'update-visitantes-salida/:id',
         component : UpdateVisitantesSalidaComponent
       },
+      {
+        path : '**',
+        component : WelcomeComponent
+      },
     ]
   },
   {
-    path: 'user-dashboard',
+    path: 'user',
     component: UserDashboardComponent,
-    pathMatch: 'full',
-    canActivate: [NormalGuard]
+    canActivate: [NormalGuard],
+    children:[
+      {
+        path : '',
+        component : UserWelcomeComponent
+      },
+      {
+        path:'profile',
+        component: ProfileComponent
+      },
+      {
+        path : 'areas',
+        component : UserViewAreasComponent
+      },
+      {
+        path : 'visitantes',
+        component : UserViewVisitantesComponent
+      },
+      {
+        path : 'add-visitantes',
+        component : UserAddVisitantesComponent
+      },
+      {
+        path : 'update-visitantes/:id',
+        component : UserUpdateVisitantesComponent
+      },
+      {
+        path : 'update-visitantes-salida/:id',
+        component : UserUpdateVisitantesSalidaComponent
+      },
+      {
+        path : '**',
+        component : UserWelcomeComponent
+      },
+    ],
   }
 ];
 

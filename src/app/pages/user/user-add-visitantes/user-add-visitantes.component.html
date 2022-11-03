@@ -1,0 +1,44 @@
+<mat-card class="mt20">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row mt20">
+                <div class="col-md-6 offset-md-3">
+                    <h1>Registrar nuevo visitante</h1>
+                    <form (ngSubmit)="formSubmit()">
+
+                        <mat-form-field class="w100" appearance="fill">
+                            <mat-label>Nombres</mat-label>
+                            <input [(ngModel)]="visitante.nombreVisitante" type="text" name="nombre" required
+                                placeholder="Digite los nombres" matInput>
+                        </mat-form-field>
+
+                        <mat-form-field class="w100" appearance="fill">
+                            <mat-label>Apellidos</mat-label>
+                            <input [(ngModel)]="visitante.apellidoVisitante" type="text" name="apellido"
+                                placeholder="Digite los apellidos" matInput>
+                        </mat-form-field>
+
+                        <mat-form-field class="w100" appearance="fill">
+                            <mat-label>DNI</mat-label>
+                            <input [(ngModel)]="visitante.dniVisitante" type="text" name="dni"
+                                placeholder="Digite el DNI" matInput>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="w100">
+                            <mat-label>Area</mat-label>
+                            <mat-select name="categoria" [(ngModel)]="visitante.area.id">
+                                <mat-option *ngFor="let a of areas" [value]="a.id">
+                                    {{ a.nombreArea }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
