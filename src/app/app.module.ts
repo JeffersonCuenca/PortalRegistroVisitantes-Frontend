@@ -42,6 +42,13 @@ import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { ViewVisitantesFechasComponent } from './pages/admin/view-visitantes-fechas/view-visitantes-fechas.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.component';
+import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
+import { UserViewAreasComponent } from './pages/user/user-view-areas/user-view-areas.component';
+import { UserAddVisitantesComponent } from './pages/user/user-add-visitantes/user-add-visitantes.component';
+import { UserViewVisitantesComponent } from './pages/user/user-view-visitantes/user-view-visitantes.component';
+import { UserUpdateVisitantesComponent } from './pages/user/user-update-visitantes/user-update-visitantes.component';
+import { UserUpdateVisitantesSalidaComponent } from './pages/user/user-update-visitantes-salida/user-update-visitantes-salida.component';
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
@@ -65,7 +72,14 @@ registerLocaleData(localeEs, 'es');
     UpdateVisitantesSalidaComponent,
     ViewUsuariosComponent,
     UpdateUsuariosComponent,
-    ViewVisitantesFechasComponent
+    ViewVisitantesFechasComponent,
+    UserSidebar,
+    UserWelcomeComponent,
+    UserViewAreasComponent,
+    UserAddVisitantesComponent,
+    UserViewVisitantesComponent,
+    UserUpdateVisitantesComponent,
+    UserUpdateVisitantesSalidaComponent
   ],
   imports: [
     BrowserModule,

@@ -30,8 +30,9 @@ export class AddAreasComponent implements OnInit {
     }
 
     this.areaService.registrarArea(this.area).subscribe(
-      (dato:any) => {
-        this.area.nombreArea = '';
+      (data:any) => {
+        console.log(data);
+        /*this.area.nombreArea = '';*/
         Swal.fire('Area agregada','El Area ha sido agregada con éxito','success');
         this.router.navigate(['/admin/areas']);
       },

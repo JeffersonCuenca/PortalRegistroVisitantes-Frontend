@@ -1,0 +1,29 @@
+<mat-card class="mt20">
+    <mat-action-list>
+      <div mat-subheader>Menu</div>
+
+      <button routerLink = "/user" mat-list-item>
+        <mat-icon mat-list-icon>home</mat-icon> Inicio
+      </button>
+
+      <button mat-list-item routerLink = "/user/profile">
+        <mat-icon mat-list-icon>account_circle</mat-icon>Perfil
+      </button>
+
+      <button mat-list-item routerLink = "/user/areas">
+        <mat-icon mat-list-icon>apartment</mat-icon>Lista de Areas
+      </button>
+
+      <button mat-list-item routerLink = "/user/add-visitantes">
+        <mat-icon mat-list-icon>group_add</mat-icon>Registrar Visitante
+      </button>
+      <button mat-list-item routerLink = "/user/visitantes">
+        <mat-icon mat-list-icon>groups</mat-icon>Lista de Visitantes del dia
+      </button>
+      
+      <button mat-list-item (click) = "logout()">
+        <mat-icon mat-list-icon>logout</mat-icon>Salir
+      </button>
+      
+    </mat-action-list>
+  </mat-card>
