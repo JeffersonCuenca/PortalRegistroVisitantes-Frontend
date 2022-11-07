@@ -49,6 +49,7 @@ import { UserAddVisitantesComponent } from './pages/user/user-add-visitantes/use
 import { UserViewVisitantesComponent } from './pages/user/user-view-visitantes/user-view-visitantes.component';
 import { UserUpdateVisitantesComponent } from './pages/user/user-update-visitantes/user-update-visitantes.component';
 import { UserUpdateVisitantesSalidaComponent } from './pages/user/user-update-visitantes-salida/user-update-visitantes-salida.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
@@ -99,9 +100,10 @@ registerLocaleData(localeEs, 'es');
     MatTableModule,
     MatDatepickerModule,
     MatSortModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatPaginatorModule
   ],
-  providers: [authInterceptorProviders, {provide:LOCALE_ID, useValue: 'es'}],
+  providers: [authInterceptorProviders, { provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
