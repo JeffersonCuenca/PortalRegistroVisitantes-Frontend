@@ -12,6 +12,10 @@
         <mat-date-range-picker #picker></mat-date-range-picker>
     </mat-form-field>
     <br><br>
+    <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+      </mat-form-field>
     <table mat-table [dataSource]="visitantes" class="mat-elevation-z2" matSort>
 
         <!-- Nombres Column -->
