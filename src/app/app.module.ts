@@ -50,6 +50,8 @@ import { UserViewVisitantesComponent } from './pages/user/user-view-visitantes/u
 import { UserUpdateVisitantesComponent } from './pages/user/user-update-visitantes/user-update-visitantes.component';
 import { UserUpdateVisitantesSalidaComponent } from './pages/user/user-update-visitantes-salida/user-update-visitantes-salida.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AddUserRolComponent } from './pages/admin/add-user-rol/add-user-rol.component';
+import { ViewUserRolComponent } from './pages/admin/view-user-rol/view-user-rol.component';
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
@@ -80,7 +82,9 @@ registerLocaleData(localeEs, 'es');
     UserAddVisitantesComponent,
     UserViewVisitantesComponent,
     UserUpdateVisitantesComponent,
-    UserUpdateVisitantesSalidaComponent
+    UserUpdateVisitantesSalidaComponent,
+    AddUserRolComponent,
+    ViewUserRolComponent
   ],
   imports: [
     BrowserModule,

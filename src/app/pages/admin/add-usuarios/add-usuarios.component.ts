@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { RolService } from 'src/app/services/rol.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
@@ -20,7 +21,7 @@ export class AddUsuariosComponent implements OnInit {
     password : ''
   }
 
-  constructor(private userService:UserService,private snack:MatSnackBar, private router:Router) { }
+  constructor(private userService:UserService, private snack:MatSnackBar, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -51,7 +52,7 @@ export class AddUsuariosComponent implements OnInit {
         this.router.navigate(['/admin/usuarios']);
       },(error) => {
         console.log(error);
-        this.snack.open('Ha ocurrido un error en el sistema!', 'Aceptar',{
+        this.snack.open('El usuario ya existe!', 'Aceptar',{
           duration : 3000,
         });
       }

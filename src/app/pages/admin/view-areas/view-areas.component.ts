@@ -10,9 +10,7 @@ import Swal from 'sweetalert2';
 export class ViewAreasComponent implements OnInit {
   displayedColumns: string[] = ['nombre', 'descripcion', 'modificar', 'eliminar'];
 
-  areas: any = [
-
-  ]
+  areas: any = []
 
   constructor(private areaService: AreaService) { }
 

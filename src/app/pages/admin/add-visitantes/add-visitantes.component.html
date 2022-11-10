@@ -26,7 +26,7 @@
 
                         <mat-form-field appearance="fill" class="w100">
                             <mat-label>Area</mat-label>
-                            <mat-select name="categoria" [(ngModel)]="visitante.area.id">
+                            <mat-select name="areas" [(ngModel)]="visitante.area.id">
                                 <mat-option *ngFor="let a of areas" [value]="a.id">
                                     {{ a.nombreArea }}
                                 </mat-option>

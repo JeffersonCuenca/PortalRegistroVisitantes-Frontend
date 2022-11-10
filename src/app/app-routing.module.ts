@@ -1,3 +1,4 @@
+import { AddUserRolComponent } from './pages/admin/add-user-rol/add-user-rol.component';
 import { UserUpdateVisitantesSalidaComponent } from './pages/user/user-update-visitantes-salida/user-update-visitantes-salida.component';
 import { UserUpdateVisitantesComponent } from './pages/user/user-update-visitantes/user-update-visitantes.component';
 import { UserAddVisitantesComponent } from './pages/user/user-add-visitantes/user-add-visitantes.component';
@@ -25,6 +26,7 @@ import { ViewVisitantesComponent } from './pages/admin/view-visitantes/view-visi
 import { AddVisitantesComponent } from './pages/admin/add-visitantes/add-visitantes.component';
 import { UpdateVisitantesComponent } from './pages/admin/update-visitantes/update-visitantes.component';
 import { UpdateVisitantesSalidaComponent } from './pages/admin/update-visitantes-salida/update-visitantes-salida.component';
+import { ViewUserRolComponent } from './pages/admin/view-user-rol/view-user-rol.component';
 
 const routes: Routes = [
   {
@@ -51,7 +53,7 @@ const routes: Routes = [
         component: ProfileComponent
       },
       {
-        path : 'adduser',
+        path : 'add-user',
         component : AddUsuariosComponent
       },
       {
@@ -93,6 +95,14 @@ const routes: Routes = [
       {
         path : 'update-visitantes-salida/:id',
         component : UpdateVisitantesSalidaComponent
+      },
+      {
+        path : 'add-user-rol',
+        component : AddUserRolComponent
+      },
+      {
+        path : 'usuariosroles',
+        component : ViewUserRolComponent
       },
       {
         path : '**',
