@@ -9,11 +9,23 @@ export class UserRolService {
 
   constructor(private http:HttpClient) { }
 
-  public listarUsuariosroles(){
+  public listarUsuariosRoles(){
     return this.http.get(`${baserUrl}/usuariosroles/list`);
   }
 
-  public registrarUsuariorol(usuarioRol:any){
+  public registrarUsuarioRol(usuarioRol:any){
     return this.http.post(`${baserUrl}/usuariosroles/new`,usuarioRol);
+  }
+
+  public eliminarUsuarioRol(id:any){
+    return this.http.delete(`${baserUrl}/usuariosroles/delete/${id}`);
+  }
+
+  public ListarUsuarioRol(id:any){
+    return this.http.get(`${baserUrl}/usuariosroles/list/${id}`);
+  }
+
+  public actualizarUsuarioRol(usuarioRol:any){
+    return this.http.put(`${baserUrl}/usuariosroles/update`,usuarioRol);
   }
 }

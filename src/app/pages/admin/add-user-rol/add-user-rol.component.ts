@@ -48,14 +48,14 @@ export class AddUserRolComponent implements OnInit {
   }
 
   formSubmit() {
-    this.usuarioRolService.registrarUsuariorol(this.usuarioRol).subscribe(
+    this.usuarioRolService.registrarUsuarioRol(this.usuarioRol).subscribe(
       (data) => {
         console.log(data);
-        Swal.fire('Visitante guardado', 'El Visitante ha sido guardado con éxito', 'success');
-        this.router.navigate(['/admin/usuarios']);
+        Swal.fire('Rol asignado correctamente', 'Usuario asignado con rol exitosamente', 'success');
+        this.router.navigate(['/admin/usuariosroles']);
       },
       (error) => {
-        Swal.fire('Error', 'Error al guardar el Visitante', 'error');
+        Swal.fire('Error', 'Error al asignar el rol al usuario', 'error');
       }
     )
   }

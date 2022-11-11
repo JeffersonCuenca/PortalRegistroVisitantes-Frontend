@@ -27,6 +27,7 @@ import { AddVisitantesComponent } from './pages/admin/add-visitantes/add-visitan
 import { UpdateVisitantesComponent } from './pages/admin/update-visitantes/update-visitantes.component';
 import { UpdateVisitantesSalidaComponent } from './pages/admin/update-visitantes-salida/update-visitantes-salida.component';
 import { ViewUserRolComponent } from './pages/admin/view-user-rol/view-user-rol.component';
+import { UpdateUserRolComponent } from './pages/admin/update-user-rol/update-user-rol.component';
 
 const routes: Routes = [
   {
@@ -103,6 +104,10 @@ const routes: Routes = [
       {
         path : 'usuariosroles',
         component : ViewUserRolComponent
+      },
+      {
+        path : 'update-user-rol/:id',
+        component : UpdateUserRolComponent
       },
       {
         path : '**',
