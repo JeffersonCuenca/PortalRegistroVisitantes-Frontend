@@ -1,0 +1,35 @@
+<mat-card class="mt20">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row mt20">
+                <div class="col-md-6 offset-md-3">
+                    <h1>Asignar rol a usuario</h1>
+                    <form *ngIf="usuarioRol" (ngSubmit)="actualizarUsuarioRol()">
+                        
+                        <mat-form-field appearance="fill" class="w100">
+                            <mat-label>Usuario</mat-label>
+                            <mat-select name="usuarios" [(ngModel)]="usuarioRol.usuario.id">
+                                <mat-option *ngFor="let u of usuarios" [value]="u.id" >
+                                    {{ u.username }} - {{ u.nombre }} {{ u.apellido }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="w100">
+                            <mat-label>Rol</mat-label>
+                            <mat-select name="roles" [(ngModel)]="usuarioRol.rol.rolId">
+                                <mat-option *ngFor="let r of roles" [value]="r.rolId">
+                                    {{ r.rolNombre }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
