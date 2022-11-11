@@ -9,8 +9,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./view-usuarios.component.css']
 })
 export class ViewUsuariosComponent implements OnInit {
-  //displayedColumns: string[] = ['username', 'nombre', 'apellido', 'dni', 'correo', 'modificar', 'eliminar'];
-  displayedColumns: string[] = ['username', 'nombre', 'apellido', 'dni', 'correo', 'eliminar'];
+  displayedColumns: string[] = ['username', 'nombre', 'apellido', 'dni', 'correo', 'modificar', 'eliminar'];
+  //displayedColumns: string[] = ['username', 'nombre', 'apellido', 'dni', 'correo', 'eliminar'];
 
   usuarios: any = [
 
