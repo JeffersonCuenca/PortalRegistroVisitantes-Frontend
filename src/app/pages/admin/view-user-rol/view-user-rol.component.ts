@@ -29,7 +29,7 @@ export class ViewUserRolComponent implements OnInit {
 
   eliminarUsuarioRol(id: any) {
     Swal.fire({
-      title: 'Eliminar Area',
+      title: 'Eliminar asignacion de rol',
       text: '¿Estás seguro de eliminar el Area?',
       icon: 'warning',
       showCancelButton: true,
@@ -42,10 +42,10 @@ export class ViewUserRolComponent implements OnInit {
         this.usuarioRolService.eliminarUsuarioRol(id).subscribe(
           (data) => {
             this.usuariosroles = this.usuariosroles.filter((usuariorol: any) => usuariorol.id != id);
-            Swal.fire('Area eliminada', 'El Area ha sido eliminada de la base de datos', 'success');
+            Swal.fire('Asignacion de rol eliminada', 'La asignacion de rol ha sido eliminada de la base de datos', 'success');
           },
           (error) => {
-            Swal.fire('Error', 'Error al eliminar el Area', 'error');
+            Swal.fire('Error', 'Error al eliminar la asignacion', 'error');
           }
         )
       }

@@ -29,4 +29,8 @@ export class UserService {
     return this.http.put(`${baserUrl}/usuarios/update`,user);
   }
 
+  public actualizarContrasenia(user:any){
+    return this.http.put(`${baserUrl}/usuarios/updatePassword`,user)
+  }
+
 }

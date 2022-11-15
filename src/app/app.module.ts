@@ -22,7 +22,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { authInterceptorProviders } from './services/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
-import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileComponent } from './pages/admin/profile/profile.component';
 import { MatListModule } from '@angular/material/list';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
@@ -53,6 +53,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { AddUserRolComponent } from './pages/admin/add-user-rol/add-user-rol.component';
 import { ViewUserRolComponent } from './pages/admin/view-user-rol/view-user-rol.component';
 import { UpdateUserRolComponent } from './pages/admin/update-user-rol/update-user-rol.component';
+import { UpdateProfileComponent } from './pages/admin/update-profile/update-profile.component';
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
+import { UserUpdateProfileComponent } from './pages/user/user-update-profile/user-update-profile.component';
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
@@ -86,7 +89,10 @@ registerLocaleData(localeEs, 'es');
     UserUpdateVisitantesSalidaComponent,
     AddUserRolComponent,
     ViewUserRolComponent,
-    UpdateUserRolComponent
+    UpdateUserRolComponent,
+    UpdateProfileComponent,
+    UserProfileComponent,
+    UserUpdateProfileComponent
   ],
   imports: [
     BrowserModule,
