@@ -1,3 +1,4 @@
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
 import { AddUserRolComponent } from './pages/admin/add-user-rol/add-user-rol.component';
 import { UserUpdateVisitantesSalidaComponent } from './pages/user/user-update-visitantes-salida/user-update-visitantes-salida.component';
 import { UserUpdateVisitantesComponent } from './pages/user/user-update-visitantes/user-update-visitantes.component';
@@ -17,7 +18,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NormalGuard } from './services/normal.guard';
 import { AdminGuard } from './services/admin.guard';
-import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileComponent } from './pages/admin/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewAreasComponent } from './pages/admin/view-areas/view-areas.component';
 import { AddAreasComponent } from './pages/admin/add-areas/add-areas.component';
@@ -28,6 +29,8 @@ import { UpdateVisitantesComponent } from './pages/admin/update-visitantes/updat
 import { UpdateVisitantesSalidaComponent } from './pages/admin/update-visitantes-salida/update-visitantes-salida.component';
 import { ViewUserRolComponent } from './pages/admin/view-user-rol/view-user-rol.component';
 import { UpdateUserRolComponent } from './pages/admin/update-user-rol/update-user-rol.component';
+import { UpdateProfileComponent } from './pages/admin/update-profile/update-profile.component';
+import { UserUpdateProfileComponent } from './pages/user/user-update-profile/user-update-profile.component';
 
 const routes: Routes = [
   {
@@ -52,6 +55,10 @@ const routes: Routes = [
       {
         path:'profile',
         component: ProfileComponent
+      },
+      {
+        path:'update-profile/:username',
+        component: UpdateProfileComponent
       },
       {
         path : 'add-user',
@@ -125,8 +132,12 @@ const routes: Routes = [
         component : UserWelcomeComponent
       },
       {
-        path:'profile',
-        component: ProfileComponent
+        path:'user-profile',
+        component: UserProfileComponent
+      },
+      {
+        path:'user-update-profile/:username',
+        component: UserUpdateProfileComponent
       },
       {
         path : 'areas',

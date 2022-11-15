@@ -6,7 +6,7 @@
                     <div class="container text-center">
                         <img src="../../../assets/register.png" width="100" height="100">
                     </div>
-                    <h1 class="text-center">Modificar Usuario</h1>
+                    <h1 class="text-center">Modificar Datos</h1>
 
                     <form *ngIf="user" (ngSubmit)="actualizarUsuario()">
                         <mat-form-field class="full-width" appearance="outline">
@@ -39,11 +39,11 @@
                                 placeholder="Ingrese su correo">
                         </mat-form-field>
 
-                        <!--<mat-form-field class="full-width" appearance="outline">
+                        <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Contraseña</mat-label>
                             <input required [(ngModel)]="user.password" name="password" type="password" matInput
                                 placeholder="Ingrese su contraseña">
-                        </mat-form-field>-->
+                        </mat-form-field>
 
                         <!--<mat-form-field class="full-width" appearance="outline">
                         <mat-label>Servicio</mat-label>
