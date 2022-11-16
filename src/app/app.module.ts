@@ -9,7 +9,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
@@ -56,6 +55,8 @@ import { UpdateUserRolComponent } from './pages/admin/update-user-rol/update-use
 import { UpdateProfileComponent } from './pages/admin/update-profile/update-profile.component';
 import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
 import { UserUpdateProfileComponent } from './pages/user/user-update-profile/user-update-profile.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
@@ -113,7 +114,9 @@ registerLocaleData(localeEs, 'es');
     MatDatepickerModule,
     MatSortModule,
     MatNativeDateModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule
   ],
   providers: [authInterceptorProviders, { provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
