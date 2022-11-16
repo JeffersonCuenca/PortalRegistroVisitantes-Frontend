@@ -1,0 +1,96 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// Define a light theme
+$light-primary: mat.define-palette(mat.$indigo-palette);
+$light-accent: mat.define-palette(mat.$pink-palette);
+$light-theme: mat.define-light-theme((
+ color: (
+   primary: $light-primary,
+   accent: $light-accent,
+ )
+));
+
+// Define a dark theme
+$dark-primary: mat.define-palette(mat.$green-palette);
+$dark-accent: mat.define-palette(mat.$blue-grey-palette);
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $dark-primary,
+   accent: $dark-accent,
+ )
+));
+
+// Apply the light theme by default
+@include mat.all-component-themes($light-theme);
+
+
+// Apply the dark theme only when the `.my-light-theme` CSS class is applied
+// to an ancestor element of the components (such as `body`).
+.darkMode {
+    @include mat.all-component-themes($dark-theme);
+    background: #222;
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body,
+.bodyComp {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: #f2f2f2;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-right {
+    text-align: right ;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.ml20{
+    margin-left: 20px !important;
+}
+
+.mr20{
+    margin-right: 20px !important;
+}
+
+.mt20{
+    margin-top: 20px !important;
+}
+
+.mb20{
+    margin-bottom: 20px !important;
+}
+
+.ml10{
+    margin-left: 10px !important;
+}
+
+.mr10{
+    margin-right: 10px !important;
+}
+
+.mt10{
+    margin-top: 10px !important;
+}
+
+.mb10{
+    margin-bottom: 10px !important;
+}
+
+.ml40{
+    margin-left: 40px !important;
+}
