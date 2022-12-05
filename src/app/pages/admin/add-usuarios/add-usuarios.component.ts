@@ -28,22 +28,14 @@ export class AddUsuariosComponent implements OnInit {
 
   formSubmit(){
     console.log(this.user);
-    if(this.user.username == '' || this.user.username == null){
+    /*if(this.user.username == '' || this.user.username == null){
       this.snack.open('Por favor rellene todos los campos!', 'Aceptar',{
         duration : 3000,
         verticalPosition : 'top',
         horizontalPosition : 'right'
       });
       return;
-    }
-    if(this.user.username != this.user.dni){
-      this.snack.open('Por favor ingrese su DNI como nombre de usuario', 'Aceptar',{
-        duration : 3000,
-        verticalPosition : 'top',
-        horizontalPosition : 'right'
-      });
-      return;
-    }    
+    }*/
 
     this.userService.registrarUsuario(this.user).subscribe(
       (data) => {
