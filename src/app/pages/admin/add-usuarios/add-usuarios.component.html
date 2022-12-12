@@ -14,6 +14,7 @@
                             <mat-label>Nombre de Usuario</mat-label>
                             <input [(ngModel)]="user.username" name="username" matInput required #username="ngModel"
                                 placeholder="Ingrese su nombre de Usuario"
+                                (ngModelChange)="user.username = $event.toUpperCase()"
                                 onkeydown="return /[a-zA-ZñÑá-úÁ-Ú, ]/i.test(event.key)">
                             <mat-error *ngIf="username.invalid && (username.dirty || username.touched)">
                                 <div *ngIf="username.errors?.['required']">
@@ -51,12 +52,12 @@
                             <input [(ngModel)]="user.dni" name="dni" matInput required minlength="8" maxlength="8"
                                 #dni="ngModel" placeholder="Ingrese su DNI">
                             <mat-error *ngIf="dni.invalid && (dni.dirty || dni.touched)">
-                                <div *ngIf="dni.errors?.['required']">
+                                <span *ngIf="dni.errors?.['required']">
                                     El dni es requerido
-                                </div>
-                                <div *ngIf="dni.errors?.['minlength']">
+                                </span>
+                                <span *ngIf="dni.errors?.['minlength']">
                                     Ingrese un dni valido
-                                </div>
+                                </span>
                             </mat-error>
                         </mat-form-field>
 

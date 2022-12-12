@@ -8,15 +8,27 @@
 
                         <mat-form-field class="w100" appearance="fill">
                             <mat-label>Nombre del Area</mat-label>
-                                <input required autofocus type="text" name="nombre" matInput
-                                    placeholder="Ingrese el nombre del Area" [(ngModel)]="area.nombreArea"
-                                    (ngModelChange)="area.nombreArea = $event.toUpperCase()">
+                            <input type="text" name="nombre" matInput required #nombre="ngModel"
+                                placeholder="Ingrese el nombre del Area" [(ngModel)]="area.nombreArea"
+                                (ngModelChange)="area.nombreArea = $event.toUpperCase()"
+                                onkeydown="return /[a-zA-ZñÑá-úÁ-Ú, ]/i.test(event.key)">
+                            <mat-error *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                                <span *ngIf="nombre.errors?.['required']">
+                                    El nombre es requerido
+                                </span>
+                            </mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="w100" appearance="fill">
                             <mat-label>Descripción</mat-label>
-                                <textarea required autofocus type="text" name="descripcion" matInput
-                                    placeholder="Ingrese una breve descripcion del Area" [(ngModel)]="area.descripcionArea" rows="8"></textarea>
+                            <textarea required type="text" name="descripcion" matInput required #descripcion="ngModel"
+                                placeholder="Ingrese una breve descripcion del Area" [(ngModel)]="area.descripcionArea"
+                                rows="8"></textarea>
+                            <mat-error *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+                                <span *ngIf="descripcion.errors?.['required']">
+                                    La descripcion es requerida
+                                </span>
+                            </mat-error>
                         </mat-form-field>
 
                         <div class="container text-center">
