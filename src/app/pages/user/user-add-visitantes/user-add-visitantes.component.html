@@ -4,29 +4,49 @@
             <div class="row mt20">
                 <div class="col-md-6 offset-md-3">
                     <h1>Registrar nuevo visitante</h1>
-                    <form (ngSubmit)="formSubmit()">
+                    <form #formVisitantes="ngForm" (ngSubmit)="formSubmit()">
 
                         <mat-form-field class="w100" appearance="fill">
                             <mat-label>Nombres</mat-label>
-                            <input [(ngModel)]="visitante.nombreVisitante" type="text" name="nombre" required
-                                placeholder="Digite los nombres" matInput>
+                            <input [(ngModel)]="visitante.nombreVisitante" name="nombre" matInput required
+                                #nombre="ngModel" placeholder="Digite los nombres"
+                                onkeydown="return /[a-zA-ZñÑá-úÁ-Ú, ]/i.test(event.key)">
+                            <mat-error *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                                <div *ngIf="nombre.errors?.['required']">
+                                    El nombre es requerido
+                                </div>
+                            </mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="w100" appearance="fill">
                             <mat-label>Apellidos</mat-label>
-                            <input [(ngModel)]="visitante.apellidoVisitante" type="text" name="apellido"
-                                placeholder="Digite los apellidos" matInput>
+                            <input [(ngModel)]="visitante.apellidoVisitante" name="apellido" matInput required
+                                #apellido="ngModel" placeholder="Digite los apellidos"
+                                onkeydown="return /[a-zA-ZñÑá-úÁ-Ú, ]/i.test(event.key)">
+                            <mat-error *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+                                <div *ngIf="apellido.errors?.['required']">
+                                    El apellido es requerido
+                                </div>
+                            </mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="w100" appearance="fill">
                             <mat-label>DNI</mat-label>
-                            <input [(ngModel)]="visitante.dniVisitante" type="text" name="dni"
-                                placeholder="Digite el DNI" matInput>
+                            <input [(ngModel)]="visitante.dniVisitante" name="dni" matInput required minlength="8"
+                                maxlength="8" #dni="ngModel" placeholder="Digite el DNI">
+                            <mat-error *ngIf="dni.invalid && (dni.dirty || dni.touched)">
+                                <span *ngIf="dni.errors?.['required']">
+                                    El dni es requerido
+                                </span>
+                                <span *ngIf="dni.errors?.['minlength']">
+                                    Ingrese un dni valido
+                                </span>
+                            </mat-error>
                         </mat-form-field>
 
                         <mat-form-field appearance="fill" class="w100">
                             <mat-label>Area</mat-label>
-                            <mat-select name="categoria" [(ngModel)]="visitante.area.id">
+                            <mat-select [(ngModel)]="visitante.area.id" name="areas" required>
                                 <mat-option *ngFor="let a of areas" [value]="a.id">
                                     {{ a.nombreArea }}
                                 </mat-option>
@@ -34,7 +54,8 @@
                         </mat-form-field>
 
                         <div class="container text-center">
-                            <button mat-raised-button color="primary">Guardar</button>
+                            <button mat-raised-button color="primary"
+                                [disabled]="!formVisitantes.form.valid">Guardar</button>
                         </div>
                     </form>
                 </div>

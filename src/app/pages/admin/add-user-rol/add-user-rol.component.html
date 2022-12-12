@@ -8,7 +8,7 @@
                         
                         <mat-form-field appearance="fill" class="w100">
                             <mat-label>Usuario</mat-label>
-                            <mat-select name="usuarios" [(ngModel)]="usuarioRol.usuario.id">
+                            <mat-select name="usuarios" [(ngModel)]="usuarioRol.usuario.id" required>
                                 <mat-option *ngFor="let u of usuarios" [value]="u.id" >
                                     {{ u.username }} - {{ u.nombre }} {{ u.apellido }}
                                 </mat-option>
@@ -17,7 +17,7 @@
 
                         <mat-form-field appearance="fill" class="w100">
                             <mat-label>Rol</mat-label>
-                            <mat-select name="roles" [(ngModel)]="usuarioRol.rol.rolId">
+                            <mat-select name="roles" [(ngModel)]="usuarioRol.rol.rolId" required>
                                 <mat-option *ngFor="let r of roles" [value]="r.rolId">
                                     {{ r.rolNombre }}
                                 </mat-option>

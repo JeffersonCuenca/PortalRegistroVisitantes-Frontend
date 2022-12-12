@@ -6,56 +6,89 @@
                     <div class="container text-center">
                         <img src="../../../assets/register.png" width="100" height="100">
                     </div>
-                    <h1 class="text-center">Modificar Datos</h1>
+                    <h1 class="text-center">Agregar Usuario</h1>
 
-                    <form *ngIf="user" (ngSubmit)="actualizarUsuario()">
+                    <form #formUsuarios="ngForm" *ngIf="user" (ngSubmit)="actualizarUsuario()">
+
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Nombre de Usuario</mat-label>
-                            <input required [(ngModel)]="user.username" name="username" matInput
-                                placeholder="Ingrese su nombre de Usuario">
+                            <input [(ngModel)]="user.username" name="username" matInput required #username="ngModel"
+                                placeholder="Ingrese su nombre de Usuario"
+                                (ngModelChange)="user.username = $event.toUpperCase()"
+                                onkeydown="return /[a-zA-ZñÑá-úÁ-Ú, ]/i.test(event.key)">
+                            <mat-error *ngIf="username.invalid && (username.dirty || username.touched)">
+                                <div *ngIf="username.errors?.['required']">
+                                    El nombre de usuario es requerido
+                                </div>
+                            </mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Nombres</mat-label>
-                            <input required [(ngModel)]="user.nombre" name="nombre" matInput
-                                placeholder="Ingrese sus nombres">
+                            <input [(ngModel)]="user.nombre" name="nombre" matInput required #nombre="ngModel"
+                                placeholder="Ingrese sus nombres"
+                                onkeydown="return /[a-zA-ZñÑá-úÁ-Ú, ]/i.test(event.key)">
+                            <mat-error *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                                <div *ngIf="nombre.errors?.['required']">
+                                    El nombre es requerido
+                                </div>
+                            </mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Apellidos</mat-label>
-                            <input required [(ngModel)]="user.apellido" name="apellido" matInput
-                                placeholder="Ingrese sus apellidos">
+                            <input [(ngModel)]="user.apellido" name="apellido" matInput required #apellido="ngModel"
+                                placeholder="Ingrese sus apellidos"
+                                onkeydown="return /[a-zA-ZñÑá-úÁ-Ú, ]/i.test(event.key)">
+                            <mat-error *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+                                <div *ngIf="apellido.errors?.['required']">
+                                    El apellido es requerido
+                                </div>
+                            </mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>DNI</mat-label>
-                            <input required [(ngModel)]="user.dni" name="dni" matInput placeholder="Ingrese su DNI">
-                            <mat-hint>El DNI debe ser único</mat-hint>
+                            <input [(ngModel)]="user.dni" name="dni" matInput required minlength="8" maxlength="8"
+                                #dni="ngModel" placeholder="Ingrese su DNI">
+                            <mat-error *ngIf="dni.invalid && (dni.dirty || dni.touched)">
+                                <span *ngIf="dni.errors?.['required']">
+                                    El dni es requerido
+                                </span>
+                                <span *ngIf="dni.errors?.['minlength']">
+                                    Ingrese un dni valido
+                                </span>
+                            </mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Correo</mat-label>
-                            <input required [(ngModel)]="user.correo" name="correo" type="email" matInput
-                                placeholder="Ingrese su correo">
+                            <input [(ngModel)]="user.correo" name="correo" type="email" matInput required email
+                                #correo="ngModel" placeholder="Ingrese su correo">
+                            <mat-error *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+                                <div *ngIf="correo.errors?.['required']">
+                                    El correo es requerido
+                                </div>
+                                <div *ngIf="correo.errors?.['email']">
+                                    Ingrese un correo valido
+                                </div>
+                            </mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Contraseña</mat-label>
-                            <input required [(ngModel)]="user.password" name="password" type="password" matInput
-                                placeholder="Ingrese su contraseña">
+                            <input [(ngModel)]="user.password" name="password" type="password" matInput required
+                                #password="ngModel" placeholder="Ingrese su contraseña">
+                            <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+                                <div *ngIf="password.errors?.['required']">
+                                    La contraseña es requerida
+                                </div>
+                            </mat-error>
                         </mat-form-field>
 
-                        <!--<mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Servicio</mat-label>
-                        <mat-select>
-                          <mat-option value="one">First option</mat-option>
-                          <mat-option value="two">Second option</mat-option>
-                        </mat-select>
-                        </mat-form-field>-->
-
                         <div class="container text-center">
-                            <button mat-raised-button color="primary">Modificar</button>
-                            <button type="reset" class="ml20" mat-raised-button color="accent">Limpiar</button>
+                            <button mat-raised-button color="primary"
+                                [disabled]="!formUsuarios.form.valid">Registrar</button>
                         </div>
                     </form>
                     <br><br><br>
